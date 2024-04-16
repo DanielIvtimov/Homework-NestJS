@@ -1,0 +1,123 @@
+{
+	"info": {
+		"_postman_id": "c5e0bbbf-3153-4a96-b96b-fee11be09253",
+		"name": "Homework 10",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "33509805"
+	},
+	"item": [
+		{
+			"name": "Create New Budget",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"New Budget\",\r\n    \"balance\": 100,\r\n    \"currency\": \"USD\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/budget",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"budget"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Budget by ID",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/cbb4be6c-9787-4923-a2fc-a478e9f52d99",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"cbb4be6c-9787-4923-a2fc-a478e9f52d99"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Bugdet by ID",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/budget/53cccc2b-08d1-4a5e-b3a4-b6a361232176",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"budget",
+						"53cccc2b-08d1-4a5e-b3a4-b6a361232176"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Budget by ID",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"New Budget Title\",\r\n    \"balance\": 5000,\r\n    \"currency\": \"USD\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/budget/967a49a2-4423-4789-af45-decac303f11e",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"budget",
+						"967a49a2-4423-4789-af45-decac303f11e"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

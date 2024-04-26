@@ -1,5 +1,5 @@
 import { Currency } from "../entity/budget.entityes";
-import { IsString, IsNumber, IsEnum } from 'class-validator';
+import { IsString, IsNumber, IsEnum } from "class-validator";
 
 export class BudgetDTO {
     @IsString()

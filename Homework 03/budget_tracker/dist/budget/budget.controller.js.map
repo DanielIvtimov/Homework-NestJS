@@ -1,0 +1,1 @@
+{"version":3,"file":"budget.controller.js","sourceRoot":"","sources":["../../src/budget/budget.controller.ts"],"names":[],"mappings":";;;;;;;;;;;;AAAA,2CAAiF;AACjF,qDAAiD;AAK1C,IAAM,gBAAgB,GAAtB,MAAM,gBAAgB;IACzB,YAA6B,aAA4B;QAA5B,kBAAa,GAAb,aAAa,CAAe;IAAG,CAAC;CA4ChE,CAAA;AA7CY,4CAAgB;2BAAhB,gBAAgB;IAD5B,IAAA,mBAAU,GAAE;qCAEmC,8BAAa;GADhD,gBAAgB,CA6C5B"}

@@ -1,5 +1,5 @@
 export interface Expense {
-    id: number;
+    id: string;
     amount: number;
     description: string;
 }
@@ -16,8 +16,8 @@ export interface Budget {
     expenses: Expense[];
     incomes: Income[];
 }
-export enum Currency {
-    EUR = 'EUR',
-    USD = 'USD',
-    MKD = 'MKD'
+export declare enum Currency {
+    EUR = "EUR",
+    USD = "USD",
+    MKD = "MKD"
 }

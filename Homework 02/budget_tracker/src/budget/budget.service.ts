@@ -1,5 +1,5 @@
-import { Injectable, NotFoundException } from '@nestjs/common';
-import { Budget, Currency} from './entity/budget.entityes';
+import { Injectable, NotFoundException } from "@nestjs/common";
+import { Budget, Currency } from "./entity/budget.entityes";
 import { v4 as uuid } from 'uuid';
 
 @Injectable()
@@ -23,11 +23,11 @@ export class BudgetService{
         },
     ];
     constructor(){}
-    public readBudgets(): Budget[]{
+    public readBugets(): Budget[]{
         return this.budgets;
     }
 
-    public createBudgets(budgetData: Budget): string {
+    public createBudget(budgetData: Budget): string {
         const newBudgetId = uuid();
         const newBudget: Budget = {
             id: newBudgetId,
@@ -42,30 +42,30 @@ export class BudgetService{
     }
 
     public getBudgetById(id: string): Budget {
-        const budget = this.budgets.find(budget => budget.id === id);
-        if(!budget){
-            throw new NotFoundException(`Budget with that id ${id} is not found`);
-        }
-        return budget;
+       const budget = this.budgets.find(budget => budget.id === id);
+       if(!budget){
+        throw new NotFoundException(`Not Found`);
+       }
+       return budget;
     }
 
     public deleteBudgetById(id: string): Budget {
         const budgetToDelete = this.budgets.find(budget => budget.id === id);
         if(!budgetToDelete){
-            throw new NotFoundException(`Budget with id ${id} cannot be dekleted, it was not found.`);
+            throw new NotFoundException(`Not Found`);
         }
         this.budgets = this.budgets.filter(budget => budget.id !== id);
         return budgetToDelete;
     }
 
-    public updateBudgetById(id: string, updateBudgetData: Budget): Budget {
+    public updateBudgetById(id: string, updateData: Budget): Budget {
         const budgetToUpdate = this.budgets.find(budget => budget.id === id);
         if(!budgetToUpdate){
-            throw new NotFoundException(`Budget with id ${id} cannot be updated, it was not found,`)
+            throw new NotFoundException(`Not Found`);
         }
-        budgetToUpdate.title = updateBudgetData.title || budgetToUpdate.title;
-        budgetToUpdate.balance = updateBudgetData.balance || budgetToUpdate.balance;
-        budgetToUpdate.currency = updateBudgetData.currency || budgetToUpdate.currency;
+        budgetToUpdate.title = updateData.title || budgetToUpdate.title;
+        budgetToUpdate.balance = updateData.balance || budgetToUpdate.balance
+        budgetToUpdate.currency = updateData.currency || budgetToUpdate.currency;
         return budgetToUpdate;
     }
 }

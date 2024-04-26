@@ -21,27 +21,27 @@ let BudgetController = class BudgetController {
         this.budgetService = budgetService;
     }
     listBudgets() {
-        return this.budgetService.readBudgets();
+        return this.budgetService.readBugets();
     }
     createBudget(budgetDataFormat) {
         const budget = {
-            id: '',
+            id: "",
             title: budgetDataFormat.title,
             balance: budgetDataFormat.balance,
             currency: budgetDataFormat.currency,
             expenses: [],
             incomes: [],
         };
-        const budgetId = this.budgetService.createBudgets(budget);
+        const budgetId = this.budgetService.createBudget(budget);
         return `Budget created successfully with ID: ${budgetId}`;
     }
-    getBudgetById(id) {
+    createBudgetById(id) {
         const getBudget = this.budgetService.getBudgetById(id);
         return getBudget;
     }
     deleteBudgetById(id) {
-        const deletedBudget = this.budgetService.deleteBudgetById(id);
-        return deletedBudget;
+        const deleteBudget = this.budgetService.deleteBudgetById(id);
+        return deleteBudget;
     }
     updateBudgetById(id, updateBudgetData) {
         const updatedBudget = this.budgetService.updateBudgetById(id, {
@@ -70,12 +70,12 @@ __decorate([
     __metadata("design:returntype", String)
 ], BudgetController.prototype, "createBudget", null);
 __decorate([
-    (0, common_1.Get)('budget/:id'),
+    (0, common_1.Get)('budget/:d'),
     __param(0, (0, common_1.Param)('id')),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [String]),
     __metadata("design:returntype", Object)
-], BudgetController.prototype, "getBudgetById", null);
+], BudgetController.prototype, "createBudgetById", null);
 __decorate([
     (0, common_1.Delete)('budget/:id'),
     __param(0, (0, common_1.Param)('id')),

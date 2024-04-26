@@ -34,10 +34,10 @@ let BudgetService = class BudgetService {
             },
         ];
     }
-    readBudgets() {
+    readBugets() {
         return this.budgets;
     }
-    createBudgets(budgetData) {
+    createBudget(budgetData) {
         const newBudgetId = (0, uuid_1.v4)();
         const newBudget = {
             id: newBudgetId,
@@ -53,26 +53,26 @@ let BudgetService = class BudgetService {
     getBudgetById(id) {
         const budget = this.budgets.find(budget => budget.id === id);
         if (!budget) {
-            throw new common_1.NotFoundException(`Budget with that id ${id} is not found`);
+            throw new common_1.NotFoundException(`Not Found`);
         }
         return budget;
     }
     deleteBudgetById(id) {
         const budgetToDelete = this.budgets.find(budget => budget.id === id);
         if (!budgetToDelete) {
-            throw new common_1.NotFoundException(`Budget with id ${id} cannot be dekleted, it was not found.`);
+            throw new common_1.NotFoundException(`Not Found`);
         }
         this.budgets = this.budgets.filter(budget => budget.id !== id);
         return budgetToDelete;
     }
-    updateBudgetById(id, updateBudgetData) {
+    updateBudgetById(id, updateData) {
         const budgetToUpdate = this.budgets.find(budget => budget.id === id);
         if (!budgetToUpdate) {
-            throw new common_1.NotFoundException(`Budget with id ${id} cannot be updated, it was not found,`);
+            throw new common_1.NotFoundException(`Not Found`);
         }
-        budgetToUpdate.title = updateBudgetData.title || budgetToUpdate.title;
-        budgetToUpdate.balance = updateBudgetData.balance || budgetToUpdate.balance;
-        budgetToUpdate.currency = updateBudgetData.currency || budgetToUpdate.currency;
+        budgetToUpdate.title = updateData.title || budgetToUpdate.title;
+        budgetToUpdate.balance = updateData.balance || budgetToUpdate.balance;
+        budgetToUpdate.currency = updateData.currency || budgetToUpdate.currency;
         return budgetToUpdate;
     }
 };

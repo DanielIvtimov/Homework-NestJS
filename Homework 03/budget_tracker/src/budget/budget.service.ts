@@ -1,6 +1,5 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
-import { Budget, Currency} from './entity/budget.interface';
-import { v4 as uuid } from 'uuid';
+import { Budget } from './entity/budget.interface';
 import { InjectRepository } from '@nestjs/typeorm';
 import { BudgetORMEntity } from './entity/budget.entity';
 import { Repository } from 'typeorm';
@@ -9,8 +8,55 @@ import { Repository } from 'typeorm';
 export class BudgetService{
     constructor(@InjectRepository(BudgetORMEntity) private readonly budgetRepository: Repository<BudgetORMEntity>,){}
 
-    
-    // private budgets: Budget[] = [
+    async readBudgets(): Promise<BudgetORMEntity[]>{
+        return await this.budgetRepository.find({
+            relations: ['expenses', 'incomes']
+        });
+    }
+
+    async createBudget(budgetData: Budget): Promise<BudgetORMEntity>{
+        const newBudget = this.budgetRepository.create({
+            title: budgetData.title,
+            balance: budgetData.balance,
+            currency: budgetData.currency
+        });
+        return await this.budgetRepository.save(newBudget);
+    }
+
+    async getBudgetById(id: string): Promise<BudgetORMEntity>{
+        const budget = await this.budgetRepository.findOne({
+            where: {id: id},
+            relations: ['expenses', 'incomes']
+        });
+        if(!budget){
+            throw new NotFoundException(`Budget with ID ${id} not found.`);
+        }
+        return budget;
+    }
+
+    async deleteBudget(id: string): Promise<void>{
+        const result = await this.budgetRepository.delete({ id: id});
+        if (!result.affected){
+            throw new NotFoundException(`Budget with ID ${id} not found.`);
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// private budgets: Budget[] = [
     //     {
     //         id: '1',
     //         title: 'Month Budget',
@@ -74,4 +120,3 @@ export class BudgetService{
     //     budgetToUpdate.currency = updateBudgetData.currency || budgetToUpdate.currency;
     //     return budgetToUpdate;
     // }
-}

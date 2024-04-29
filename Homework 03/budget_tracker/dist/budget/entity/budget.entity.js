@@ -61,7 +61,7 @@ __decorate([
     __metadata("design:type", BudgetORMEntity)
 ], ExpenseORMEntity.prototype, "budget", void 0);
 exports.ExpenseORMEntity = ExpenseORMEntity = __decorate([
-    (0, typeorm_1.Entity)()
+    (0, typeorm_1.Entity)({ name: "our_expenses" })
 ], ExpenseORMEntity);
 let IncomeORMEntity = class IncomeORMEntity {
 };
@@ -83,6 +83,6 @@ __decorate([
     __metadata("design:type", BudgetORMEntity)
 ], IncomeORMEntity.prototype, "budget", void 0);
 exports.IncomeORMEntity = IncomeORMEntity = __decorate([
-    (0, typeorm_1.Entity)()
+    (0, typeorm_1.Entity)({ name: "our_incomes" })
 ], IncomeORMEntity);
 //# sourceMappingURL=budget.entity.js.map

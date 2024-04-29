@@ -31,14 +31,14 @@ __decorate([
 __decorate([
     (0, class_validator_1.IsOptional)(),
     (0, class_validator_1.ArrayNotEmpty)(),
-    (0, class_validator_1.ValidateNested)({ each: true }),
+    (0, class_validator_1.ValidateNested)(),
     (0, class_transformer_1.Type)(() => ExpenseDTO),
     __metadata("design:type", Array)
 ], BudgetDTO.prototype, "expenses", void 0);
 __decorate([
     (0, class_validator_1.IsOptional)(),
     (0, class_validator_1.ArrayNotEmpty)(),
-    (0, class_validator_1.ValidateNested)({ each: true }),
+    (0, class_validator_1.ValidateNested)(),
     (0, class_transformer_1.Type)(() => IncomeDTO),
     __metadata("design:type", Array)
 ], BudgetDTO.prototype, "incomes", void 0);
@@ -64,10 +64,6 @@ class ExpenseDTO {
 }
 exports.ExpenseDTO = ExpenseDTO;
 __decorate([
-    (0, class_validator_1.IsString)(),
-    __metadata("design:type", String)
-], ExpenseDTO.prototype, "id", void 0);
-__decorate([
     (0, class_validator_1.IsNumber)(),
     __metadata("design:type", Number)
 ], ExpenseDTO.prototype, "amount", void 0);
@@ -78,10 +74,6 @@ __decorate([
 class IncomeDTO {
 }
 exports.IncomeDTO = IncomeDTO;
-__decorate([
-    (0, class_validator_1.IsString)(),
-    __metadata("design:type", String)
-], IncomeDTO.prototype, "id", void 0);
 __decorate([
     (0, class_validator_1.IsNumber)(),
     __metadata("design:type", Number)

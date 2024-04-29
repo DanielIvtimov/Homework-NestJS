@@ -21,7 +21,7 @@ export class BudgetORMEntity {
     incomes: IncomeORMEntity[];
 }
 
-@Entity()
+@Entity({name: "our_expenses"})
 export class ExpenseORMEntity {
     @PrimaryGeneratedColumn('uuid')
     id: string;
@@ -36,7 +36,7 @@ export class ExpenseORMEntity {
     budget: BudgetORMEntity;
 }
 
-@Entity()
+@Entity({name: "our_incomes"})
 export class IncomeORMEntity {
     @PrimaryGeneratedColumn('uuid')
     id: string;

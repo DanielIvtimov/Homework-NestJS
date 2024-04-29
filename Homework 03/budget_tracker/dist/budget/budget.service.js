@@ -21,6 +21,35 @@ let BudgetService = class BudgetService {
     constructor(budgetRepository) {
         this.budgetRepository = budgetRepository;
     }
+    async readBudgets() {
+        return await this.budgetRepository.find({
+            relations: ['expenses', 'incomes']
+        });
+    }
+    async createBudget(budgetData) {
+        const newBudget = this.budgetRepository.create({
+            title: budgetData.title,
+            balance: budgetData.balance,
+            currency: budgetData.currency
+        });
+        return await this.budgetRepository.save(newBudget);
+    }
+    async getBudgetById(id) {
+        const budget = await this.budgetRepository.findOne({
+            where: { id: id },
+            relations: ['expenses', 'incomes']
+        });
+        if (!budget) {
+            throw new common_1.NotFoundException(`Budget with ID ${id} not found.`);
+        }
+        return budget;
+    }
+    async deleteBudget(id) {
+        const result = await this.budgetRepository.delete({ id: id });
+        if (!result.affected) {
+            throw new common_1.NotFoundException(`Budget with ID ${id} not found.`);
+        }
+    }
 };
 exports.BudgetService = BudgetService;
 exports.BudgetService = BudgetService = __decorate([

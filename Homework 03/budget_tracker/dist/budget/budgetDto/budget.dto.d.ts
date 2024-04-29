@@ -12,12 +12,10 @@ export declare class BudgetUpdateDTO {
     currency?: Currency;
 }
 export declare class ExpenseDTO {
-    id: string;
     amount: number;
     description: string;
 }
 export declare class IncomeDTO {
-    id: string;
     amount: number;
     description: string;
 }

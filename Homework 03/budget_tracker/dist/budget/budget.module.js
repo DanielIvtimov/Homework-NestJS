@@ -18,7 +18,7 @@ exports.BudgetModule = BudgetModule;
 exports.BudgetModule = BudgetModule = __decorate([
     (0, common_1.Module)({
         imports: [typeorm_1.TypeOrmModule.forFeature([budget_entity_1.BudgetORMEntity, budget_entity_1.ExpenseORMEntity, budget_entity_1.IncomeORMEntity])],
-        providers: [budget_service_1.BudgetService, budget_entity_1.BudgetORMEntity],
+        providers: [budget_service_1.BudgetService],
         controllers: [budget_controller_1.BudgetController],
     })
 ], BudgetModule);

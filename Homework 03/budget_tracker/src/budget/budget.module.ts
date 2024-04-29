@@ -6,7 +6,7 @@ import { BudgetORMEntity, ExpenseORMEntity, IncomeORMEntity } from './entity/bud
 
 @Module({
   imports: [TypeOrmModule.forFeature([BudgetORMEntity, ExpenseORMEntity, IncomeORMEntity])],
-  providers: [BudgetService, BudgetORMEntity],
+  providers: [BudgetService],
   controllers: [BudgetController],
 })
 export class BudgetModule {}

@@ -1,5 +1,5 @@
 import { Currency } from "../entity/budget.interface";
-import { IsString, IsNumber, IsEnum, IsOptional, ArrayNotEmpty, ValidateNested, } from 'class-validator';
+import { IsString, IsNumber, IsEnum, IsOptional, ArrayNotEmpty, ValidateNested } from 'class-validator';
 import { Type } from 'class-transformer';
 
 export class BudgetDTO {
@@ -14,13 +14,13 @@ export class BudgetDTO {
 
     @IsOptional()
     @ArrayNotEmpty()
-    @ValidateNested({ each: true })
+    @ValidateNested()
     @Type(() => ExpenseDTO)
     expenses: ExpenseDTO[];
 
     @IsOptional()
     @ArrayNotEmpty()
-    @ValidateNested({ each: true })
+    @ValidateNested()
     @Type(() => IncomeDTO)
     incomes: IncomeDTO[];
 }
@@ -40,8 +40,8 @@ export class BudgetUpdateDTO {
 } 
 
 export class ExpenseDTO {
-    @IsString()
-    id: string;
+    // @IsString()
+    // id: string;
 
     @IsNumber()
     amount: number;
@@ -51,8 +51,8 @@ export class ExpenseDTO {
 }
 
 export class IncomeDTO {
-    @IsString()
-    id: string;
+    // @IsString()
+    // id: string;
 
     @IsNumber()
     amount: number;

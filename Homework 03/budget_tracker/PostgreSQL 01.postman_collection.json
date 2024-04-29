@@ -1,0 +1,126 @@
+{
+	"info": {
+		"_postman_id": "35480073-9a78-451a-b102-aa1ff0b3ac4a",
+		"name": "PostgreSQL 01",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "33509805"
+	},
+	"item": [
+		{
+			"name": "Get All Budgets",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/budget",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"budget"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create New Budget",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"Vacation Budget\",\r\n    \"balance\": 8000,\r\n    \"currency\": \"EUR\",\r\n    \"expenses\": [\r\n        {\r\n            \"amount\": 1500,\r\n            \"description\": \"Airfare\"\r\n        },\r\n        {\r\n            \"amount\": 1000,\r\n            \"description\": \"Accommodation\"\r\n        },\r\n        {\r\n            \"amount\": 800,\r\n            \"description\": \"Food\"\r\n        },\r\n        {\r\n            \"amount\": 500,\r\n            \"description\": \"Activities\"\r\n        }\r\n    ],\r\n    \"incomes\": [\r\n        {\r\n            \"amount\": 3000,\r\n            \"description\": \"Saved Money\"\r\n        },\r\n        {\r\n            \"amount\": 2500,\r\n            \"description\": \"Bonus\"\r\n        }\r\n    ]\r\n}\r\n\r\n\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/budget",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"budget"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Budget by ID",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/budget/967a49a2-4423-4789-af45-decac303f11e",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"budget",
+						"967a49a2-4423-4789-af45-decac303f11e"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Bugdet by ID",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/budget/1b9d15d2-26d4-4f45-956a-6eff54650de0",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"budget",
+						"1b9d15d2-26d4-4f45-956a-6eff54650de0"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

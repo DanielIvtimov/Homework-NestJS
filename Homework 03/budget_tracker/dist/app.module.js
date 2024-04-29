@@ -11,8 +11,6 @@ const common_1 = require("@nestjs/common");
 const app_controller_1 = require("./app.controller");
 const app_service_1 = require("./app.service");
 const budget_module_1 = require("./budget/budget.module");
-const budget_service_1 = require("./budget/budget.service");
-const budget_controller_1 = require("./budget/budget.controller");
 const typeorm_1 = require("@nestjs/typeorm");
 let AppModule = class AppModule {
 };
@@ -27,9 +25,10 @@ exports.AppModule = AppModule = __decorate([
                 password: 'postgres',
                 database: 'OurBudget',
                 autoLoadEntities: true,
+                synchronize: true
             })],
-        controllers: [app_controller_1.AppController, budget_controller_1.BudgetController],
-        providers: [app_service_1.AppService, budget_service_1.BudgetService]
+        controllers: [app_controller_1.AppController],
+        providers: [app_service_1.AppService]
     })
 ], AppModule);
 //# sourceMappingURL=app.module.js.map

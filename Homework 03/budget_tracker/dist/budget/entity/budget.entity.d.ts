@@ -1,3 +1,4 @@
+import { ExpenseORMEntity } from './expenses.entity';
 export declare class BudgetORMEntity {
     id: string;
     title: string;
@@ -5,12 +6,6 @@ export declare class BudgetORMEntity {
     currency: string;
     expenses: ExpenseORMEntity[];
     incomes: IncomeORMEntity[];
-}
-export declare class ExpenseORMEntity {
-    id: string;
-    amount: number;
-    description: string;
-    budget: BudgetORMEntity;
 }
 export declare class IncomeORMEntity {
     id: string;

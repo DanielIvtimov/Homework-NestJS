@@ -6,7 +6,7 @@ import { Repository } from 'typeorm';
 
 @Injectable()
 export class BudgetService{
-    constructor(@InjectRepository(BudgetORMEntity) private readonly budgetRepository: Repository<BudgetORMEntity>,){}
+    constructor(@InjectRepository(BudgetORMEntity) private readonly budgetRepository: Repository<BudgetORMEntity>){}
 
     async readBudgets(): Promise<BudgetORMEntity[]>{
         return await this.budgetRepository.find({

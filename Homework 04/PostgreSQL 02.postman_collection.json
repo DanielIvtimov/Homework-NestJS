@@ -1,0 +1,314 @@
+{
+	"info": {
+		"_postman_id": "5881ad98-6825-44fb-ab77-057cdfd2aea9",
+		"name": "PostgreSQL 02",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "33509805"
+	},
+	"item": [
+		{
+			"name": "Get All Budgets",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIwMTI4OTg5Yi01Y2IzLTQwMTItYmUzMy0xMTJmNTNlNTI0OTIiLCJlbWFpbCI6ImRvbmNhcmxvQG1haWwuY29tIiwiaWF0IjoxNzE1MTM0MjI3LCJleHAiOjE3MTUyMjA2Mjd9.530M492opvM7YosX9OSSnrvjGztC_nKSJ9axVdnL0bw",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/budget",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"budget"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create New Budget",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"Vacation Budget\",\r\n    \"balance\": 8000,\r\n    \"currency\": \"EUR\",\r\n    \"expenses\": [\r\n        {\r\n            \"amount\": 1500,\r\n            \"description\": \"Airfare\"\r\n        },\r\n        {\r\n            \"amount\": 1000,\r\n            \"description\": \"Accommodation\"\r\n        },\r\n        {\r\n            \"amount\": 800,\r\n            \"description\": \"Food\"\r\n        },\r\n        {\r\n            \"amount\": 500,\r\n            \"description\": \"Activities\"\r\n        }\r\n    ],\r\n    \"incomes\": [\r\n        {\r\n            \"amount\": 3000,\r\n            \"description\": \"Saved Money\"\r\n        },\r\n        {\r\n            \"amount\": 2500,\r\n            \"description\": \"Bonus\"\r\n        }\r\n    ]\r\n}\r\n\r\n\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/budget",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"budget"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Budget by ID",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/budget/8f97f190-2b34-4b29-9093-94fdd86f6977",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"budget",
+						"8f97f190-2b34-4b29-9093-94fdd86f6977"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Bugdet by ID",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/budget/1b9d15d2-26d4-4f45-956a-6eff54650de0",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"budget",
+						"1b9d15d2-26d4-4f45-956a-6eff54650de0"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create New Expenses",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"amount\": 800,\r\n    \"description\": \"Groceries\",\r\n    \"budgetId\": \"387aa579-aaea-4636-98f1-6ca04767eb59\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/expenses",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"expenses"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create New Incomes",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"amount\": 200,\r\n    \"description\": \"Investment Income\",\r\n    \"budgetId\": \"387aa579-aaea-4636-98f1-6ca04767eb59\"\r\n}\r\n\r\n\r\n\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/incomes",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"incomes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Register new User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"doncarlo@mail.com\",\r\n    \"password\": \"password123\",\r\n    \"firstName\": \"Don\",\r\n    \"lastName\": \"Carlo\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/auth/register",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login User",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"doncarlo@mail.com\",\r\n    \"password\": \"password123\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/auth/login",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all Budgets Unauthorized",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/budget",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"budget"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Budgets With User",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIwMTI4OTg5Yi01Y2IzLTQwMTItYmUzMy0xMTJmNTNlNTI0OTIiLCJlbWFpbCI6ImRvbmNhcmxvQG1haWwuY29tIiwiaWF0IjoxNzE1MTM0MzI3LCJleHAiOjE3MTUyMjA3Mjd9.iLISOVpfWyviLoa3BpQ34SXprgSCf5ZHHzHysEKJHYg",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/budget",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"budget"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

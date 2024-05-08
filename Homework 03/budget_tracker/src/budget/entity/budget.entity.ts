@@ -1,3 +1,4 @@
+import { ExpenseORMEntity } from './expenses.entity';
 import { Entity, Column, PrimaryGeneratedColumn, OneToMany, ManyToOne } from 'typeorm';
 
 @Entity({name: "our_budget"})
@@ -19,21 +20,6 @@ export class BudgetORMEntity {
 
     @OneToMany(() => IncomeORMEntity, income => income.budget)
     incomes: IncomeORMEntity[];
-}
-
-@Entity({name: "our_expenses"})
-export class ExpenseORMEntity {
-    @PrimaryGeneratedColumn('uuid')
-    id: string;
-
-    @Column()
-    amount: number;
-
-    @Column()
-    description: string;
-
-    @ManyToOne(() => BudgetORMEntity, budget => budget.expenses)
-    budget: BudgetORMEntity;
 }
 
 @Entity({name: "our_incomes"})

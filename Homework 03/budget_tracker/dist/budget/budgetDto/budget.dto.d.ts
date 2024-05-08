@@ -14,6 +14,7 @@ export declare class BudgetUpdateDTO {
 export declare class ExpenseDTO {
     amount: number;
     description: string;
+    budgetId: string;
 }
 export declare class IncomeDTO {
     amount: number;

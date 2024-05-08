@@ -48,6 +48,9 @@ export class ExpenseDTO {
 
     @IsString()
     description: string;
+
+    @IsString()
+    budgetId: string
 }
 
 export class IncomeDTO {

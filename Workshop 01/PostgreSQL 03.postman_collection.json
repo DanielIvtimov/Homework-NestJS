@@ -1,0 +1,110 @@
+{
+	"info": {
+		"_postman_id": "32dc50c6-3ae3-47bb-a23d-e7d89e8616f9",
+		"name": "PostgreSQL 03",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "33509805"
+	},
+	"item": [
+		{
+			"name": "Create Author",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstName\": \"Jurgen\",\r\n    \"lastName\": \"Klopp\",\r\n    \"from\": \"Germany\",\r\n    \"birthDate\": \"1967-06-16\",\r\n    \"books\": []\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/authors",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"authors"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Authors",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "Get Author By Id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/authors/a2b76f9b-7354-49e3-b15a-4af57deded7b",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"authors",
+						"a2b76f9b-7354-49e3-b15a-4af57deded7b"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Author",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/authors/a2b76f9b-7354-49e3-b15a-4af57deded7b",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"authors",
+						"a2b76f9b-7354-49e3-b15a-4af57deded7b"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Book",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"To Kill a Mockingbird\",\r\n    \"description\": \"novel.\",\r\n    \"genre\": \"Fiction\",\r\n    \"author\": {\r\n        \"firstName\": \"Jurgen\",\r\n        \"lastName\": \"Klopp\",\r\n        \"from\": \"Germany\",\r\n        \"birthDate\": \"1967-06-15T23:00:00.000Z\",\r\n        \"books\":[]\r\n    },\r\n    \"publisher\": \"J. B. Lippincott & Co.\",\r\n    \"isbn\": 9780061120084\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/books",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"books"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
